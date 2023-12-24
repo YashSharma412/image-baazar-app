@@ -6,9 +6,9 @@ const ImageSearch = ({ setImageArr }) => {
   //   const [imageArr, setImageArr] = useState([]);
   //   console.log(srchQuerry);
 
-  useEffect(() => {
-    fetchImages();
-  }, []);
+  // useEffect(() => {
+  //   fetchImages();
+  // }, []);
 
   async function fetchImages(e) {
     if (e) {
@@ -25,7 +25,7 @@ const ImageSearch = ({ setImageArr }) => {
           headers: {
             "Accept-Version": "v1",
             "Authorization":
-              "Client-ID 4Mz7H4fulolWJbGTkcjg4hUWxqq2yhVs6Jy4QnAC5io",
+              `Client-ID ${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`,
           },
           params: {
             query: srchQuerry || "random",
